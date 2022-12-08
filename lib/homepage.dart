@@ -28,68 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Row(
-                children: <Widget>[
-                  Checkbox(
-                    value: firstvalue,
-                    checkColor: Colors.white,
-                    activeColor: Colors.green,
-                    onChanged: (value1) {
-                      setState(() {
-                        firstvalue = value1!;
-                      });
-                    },
-                  ),
-                  const Text("New Task 1"),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 150,
-                    ),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.delete,
-                        color: Colors.red,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Row(
-                children: <Widget>[
-                  Checkbox(
-                    value: secondvalue,
-                    checkColor: Colors.white,
-                    activeColor: Colors.green,
-                    onChanged: (value) {
-                      setState(() {
-                        secondvalue = value!;
-                      });
-                    },
-                  ),
-                  const Text("New Task 2"),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 150,
-                    ),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.delete,
-                        color: Colors.red,
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            )
-          ],
+          children: <Widget>[ToDoTile(), ToDoTile()],
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -100,6 +39,35 @@ class _MyHomePageState extends State<MyHomePage> {
           Icons.add,
           color: Colors.amber,
         ),
+      ),
+    );
+  }
+}
+
+class ToDoTile extends StatelessWidget {
+  const ToDoTile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: Row(
+        children: <Widget>[
+          Checkbox(
+            value: false,
+            checkColor: Colors.white,
+            activeColor: Colors.green,
+            onChanged: (value1) {},
+          ),
+          const Expanded(child: Text("New Task 1")),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.delete,
+              color: Colors.red,
+            ),
+          ),
+        ],
       ),
     );
   }

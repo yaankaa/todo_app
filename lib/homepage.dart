@@ -50,7 +50,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     child: IconButton(
                       onPressed: () {},
-                      icon: const Icon(Icons.delete),
+                      icon: const Icon(
+                        Icons.delete,
+                        color: Colors.red,
+                      ),
                     ),
                   ),
                 ],
@@ -77,7 +80,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     child: IconButton(
                       onPressed: () {},
-                      icon: const Icon(Icons.delete),
+                      icon: const Icon(
+                        Icons.delete,
+                        color: Colors.red,
+                      ),
                     ),
                   )
                 ],
@@ -87,9 +93,13 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.brown,
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: const Icon(
+          Icons.add,
+          color: Colors.amber,
+        ),
       ),
     );
   }
